@@ -12,7 +12,7 @@ class GeometricObject
 	public:
 		GeometricObject()
 		{
-			color = "white";
+			color = "BLACK";
 			filled = false;
 			cout << "Constructor1" << endl;
 		}
