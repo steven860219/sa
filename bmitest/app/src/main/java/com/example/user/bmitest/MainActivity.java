@@ -1,5 +1,6 @@
 package com.example.user.bmitest;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,7 +27,20 @@ public class MainActivity extends AppCompatActivity {
         double resu = bmiw / (bmih*bmih);
 
         TextView result = (TextView) findViewById(R.id.result);
-        result.setText("BMI = " + resu);
-
+        if(resu >= 24) {
+            result.setText("你過重了！\n" + "BMI = " + resu);
+            result.setTextColor(Color.RED);
+            result.setTextSize(36);
+        }
+        else if(resu >= 18.5) {
+            result.setText("體重正常！\n" + "BMI = " + resu);
+            result.setTextColor(Color.GREEN);
+            result.setTextSize(24);
+        }
+        else{
+            result.setText("你太瘦了！\n" + "BMI = " + resu);
+            result.setTextColor(Color.RED);
+            result.setTextSize(36);
+        }
     }
 }
